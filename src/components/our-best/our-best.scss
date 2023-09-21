@@ -1,0 +1,46 @@
+.our__best {
+    min-height: 495px;
+    background: url(../../resources/img/our_best.jpg) center (center/cover) no-repeat;
+    padding-top: 80px;
+    &-title {
+        text-align: center;
+        font-weight: 400;
+    }
+}
+
+.wrapper {
+    display: block;
+    margin: 0 auto;
+    width: 800px;
+    &__items {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+    }
+    &__item {
+        padding: 0 25px;
+        position: relative;
+        &-img {
+            width: 151px;
+            height: 130px;
+            position: absolute;
+            z-index: 2;
+            left: 60px;
+            top: 25px;
+        }
+        &-sub{
+            font-size: 14px;
+            font-weight: 400;
+            position: absolute;
+            top: 175px;
+            left: 50px;
+        }
+        &-price {
+            position: absolute;
+            font-size: 14px;
+            font-weight: 400;
+            top: 205px;
+            left: 180px;
+        }
+    }
+}
