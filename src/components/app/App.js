@@ -1,22 +1,26 @@
-import AppHeader from '../app-header/app-header';
-import AboutUs from '../about-us/about-us';
-import OurBest from '../our-best/our-best';
-import Footer from '../footer/footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MainPage from '../pages/main-page';
+import OurCoffeePage from '../pages/our-coffee-page';
+import ForYourPleasurePage from '../pages/for-your-pleasure-page';
+import AboutItPage from '../pages/about-it-page';
+import Page404 from '../pages/404';
+
 
 const App = () => {
     return (
-      <div className="app">
-        <AppHeader/>
-        <main>
-          <AboutUs/>
-          <div className="best__coffee">
-            <OurBest/>
-          </div>
-          <div className="footer">
-            <Footer/>
-          </div>
-        </main>
-    </div>
+    	<Router>
+			<div className="app">
+				<main>
+					<Routes>
+						<Route end path="/" element={<MainPage/>}/>
+						<Route end path="/coffee" element={<OurCoffeePage/>}/>
+						<Route end path="/pleasure" element={<ForYourPleasurePage/>}/>
+						<Route end path="/about" element={<AboutItPage/>}/>
+						<Route end path="*" element={<Page404/>}/>
+					</Routes>
+				</main>
+			</div>
+		</Router>
     )
 }
 

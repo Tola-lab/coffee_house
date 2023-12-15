@@ -1,3 +1,4 @@
+import {NavLink} from 'react-router-dom';
 import logo from '../../resources/img/logo_black.svg';
 import beans from '../../resources/img/beans_logo_black.svg';
 import './footer.scss';
@@ -7,9 +8,9 @@ const Footer = () => {
         <div className="footer">
             <nav className="footer__menu">
                     <ul>
-                        <li><a href="#"><img src={logo} alt="beans" />Coffee house</a></li>
-                        <li><a href="#">Our coffee</a></li>
-                        <li><a href="#">For your pleasure</a></li>
+                        <li><NavLink to="/"><img src={logo} alt="beans" />Coffee house</NavLink></li>
+                        <li><NavLink to="/coffee">Our coffee</NavLink></li>
+                        <li><NavLink to="/pleasure">For your pleasure</NavLink></li>
                     </ul>
             </nav>
             <img src={beans} alt="beans" />

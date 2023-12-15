@@ -1,0 +1,48 @@
+@import '../../style/variables.scss';
+
+.about_it {
+    margin-top: 60px;
+    &-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &_text {
+            margin-left: 50px;
+            img {
+                display: block;
+                margin: 0 auto;
+                margin-top: 20px;
+            }
+        }
+    }
+    &-title {
+        font-weight: 400;
+        font-size: 24px;
+        text-align: center;
+    }
+    &-subtitle {
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    &-descr {
+        margin-top: 16px;
+        width: 418px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    &-price {
+        margin-top: 10px;
+        display: flex;
+        align-items: baseline;
+        &-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        &-count {
+            font-size: 24px;
+            font-weight: 400;
+        }
+    }
+}

@@ -18,3 +18,17 @@ a {
     color: inherit;
     display: inline-block;
 }
+
+.verb {
+    display: block;
+    margin: 0 auto;
+    margin-top: 70px;
+    width: 240px;
+    height: 1px;
+    background: #000;
+}
+
+.conteiner {
+    max-width: 950px;
+    margin: 0 auto;
+}

@@ -1,0 +1,19 @@
+@import '../../style/variables.scss';
+
+.for-your-pleasure {
+    min-height: 260px;
+    background: url(../../resources/img/for_your_pleasure_bg.png) center (center/cover) no-repeat;
+    padding-top: 35px;
+    &__header {
+        width: 355px;
+        height: 40px;
+        margin-left: 150px;
+    }
+    &__title {
+        margin-top: 60px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 40px;
+        color: $main-color;
+    }
+}
