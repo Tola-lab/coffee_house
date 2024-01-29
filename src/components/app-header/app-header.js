@@ -1,8 +1,10 @@
+import {Link} from 'react-router-dom';
 import beans from '../../resources/img/beans_logo.svg';
 import AppMenu from '../app-menu/app-menu';
 import './app-header.scss';
 
 const AppHeader = () => {
+
     return (
         <header className="header">
             <div className="app__header">
@@ -16,7 +18,11 @@ const AppHeader = () => {
                     <p>Want to try our beans?</p>
                 </div>
             </div>
-            <button className="button__main">More</button>
+                <button className="button__main">
+                    <Link to="/coffee">
+                        More
+                    </Link>
+                    </button>
         </header> 
     );
 }
