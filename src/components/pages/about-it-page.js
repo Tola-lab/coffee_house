@@ -1,12 +1,12 @@
 import OurCoffee from '../our-coffee/our-coffee';
-import AboutIt from '../about-it/about-it';
 import Footer from '../footer/footer';
+import SingleCardPage from './single-card-page';
 
 const AboutItPage = () => {
     return (
         <>
             <OurCoffee/>
-            <AboutIt/>
+            <SingleCardPage/>
             <Footer/>
         </>
     )

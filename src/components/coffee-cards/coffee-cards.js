@@ -1,44 +1,30 @@
 import { Link } from 'react-router-dom';
 import coffee from '../../resources/img/aromistico.jpeg';
 import {useState, useEffect} from 'react';
-import {useHttp} from '../../hooks/http.hook';
+import useCoffeeService from '../../services/coffee-service';
 import ErrorMessage from '../error-message/error-message';
+import Spinner from '../spinner/spinner';
 import './coffee-cards.scss';
 
 const CoffeeCards = () => {
 
     const [coffeeCards, setCoffeeCards] = useState([]);
-    const [error, setError] = useState(false);
-    const {request} = useHttp();
+    const {getAllCards, error, loading} = useCoffeeService();
 
     useEffect(() => {
         onRequest();
     }, []);
 
     const onRequest = () => {
-        request("http://localhost:3001/coffee")
-            .then(data => setCoffeeCards(data.map(_transformCards)))
-            .catch(onError)
+        getAllCards()
+            .then(res => setCoffeeCards(res))
             // eslint-disable-next-line
     };
 
-    const onError = () => {
-        setError(true);
-    };
-
-    const _transformCards = (card) => {
-        return { 
-            name: card.name, 
-            country: card.country, 
-            price: card.price,
-            img: card.img
-        }
-    };
-
     const renderItems = (arr) => {
-        const cards = arr.map((item) => {
+        const cards = arr.map(item => {
             return (
-                    <Link to={`/about`} 
+                    <Link to={`/coffee/${item.id}`} 
                           className="coffee_card" 
                           key={item.id}>
                             <div className="coffee_card-wrapper">
@@ -60,14 +46,18 @@ const CoffeeCards = () => {
     const cards = renderItems(coffeeCards);
 
     const errorMessage = error ? <ErrorMessage/> : null;
+    const spinner = loading ? <Spinner/> : null;
     const content = !error ? cards : null;
+
 
     return (
         <div className="conteiner">
             {errorMessage}
+            {spinner}
             {content}
         </div>
     )
+    
 };
 
 export default CoffeeCards;
